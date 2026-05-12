@@ -20,10 +20,7 @@
   --color-warm-taupe: #b8a890;
   --color-icy-electric: #c4e0ee;
 
-  /* Semantic aliases — components should reach for these.
-   * Changing one of these in this file is the only thing required
-   * to recolour the whole site for the role in question.
-   */
+  /* Semantic aliases — components should reach for these. */
   --color-surface: var(--color-cream);
   --color-surface-raised: var(--color-pale-cream);
   --color-ink: var(--color-deep-ink);
@@ -33,12 +30,13 @@
   --color-focus: var(--color-icy-electric);
 
   /* === Typography ===
-   * One serif: Playfair Display, used everywhere (wordmark, headlines,
-   * body, labels, buttons). This is the BriefHub logo font extended
-   * to the whole reading surface, by Peter's instruction.
+   * Playfair Display for the wordmark and display headlines.
+   * Inter Medium (500) for body, navigation, labels, buttons, form
+   * controls. This matches the original brief.
    */
   --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
-  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI",
+    sans-serif;
 }
 
 :root {
@@ -49,8 +47,8 @@ html,
 body {
   background: var(--color-surface);
   color: var(--color-ink);
-  font-family: var(--font-serif);
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

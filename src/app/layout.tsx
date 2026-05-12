@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -10,10 +10,17 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "BriefHub",
   description:
-    "The fastest, easiest and dare we say cheapest way to buy quality legal advice. A vetted network of senior commercial solicitors. Three comparable pitches at three fixed prices. Free for buyers.",
+    "City-grade commercial solicitors pitching for your work. Three comparable quotes inside 48 hours. Free for clients.",
   metadataBase: new URL("https://briefhub.co"),
   openGraph: {
     title: "BriefHub",
@@ -32,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} h-full antialiased`}
+      className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface text-ink">
         {children}

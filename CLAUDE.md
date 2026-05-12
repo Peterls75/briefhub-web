@@ -45,11 +45,13 @@ Components use the semantic names (`bg-surface`, `text-ink`, `text-accent`, `bor
 
 ### Typography
 
-One serif. Playfair Display everywhere: wordmark, headlines, body, labels, buttons, eyebrow labels, form controls. Self-hosted via `next/font/google`. Loaded weights: 400, 500, 600, 700, with italic across the same range.
+- **Playfair Display** for the wordmark, h1, h2 and pull quotes. Self-hosted via `next/font/google`. Loaded weights: 400, 500, 600, 700, with italic.
+- **Inter Medium (500)** for body, navigation, labels, buttons and form controls. Self-hosted the same way. Loaded weights: 400, 500, 600.
+- Small-caps eyebrow labels in Inter, blue-grey on cream, with a middle-dot (` · `) separator between phrases. Use at the top of every major section.
 
-Body text defaults to 400 weight. Headlines step up to 500 or 600 for upright lines and use italic 400 for the third line of three-line strapline headlines (the brand's resolution beat). The wordmark uses 400 for "Brief" and 700 for "Hub".
+The wordmark uses Playfair 400 for "Brief" and 700 for "Hub". Italic is reserved for the third line of three-line strapline headlines (the brand's resolution beat) and for emphasis within paragraphs.
 
-This is by Peter's instruction: "use the same fonts as the BriefHub logo font." Playfair Display is a "Didone" style serif (high contrast, thin/thick strokes) designed primarily for display use. At body size it can read heavier than a purpose-built reading serif. If long-form pages (privacy, terms) read uncomfortably the alternative is the newer "Playfair" family (with optical sizes for body), but the single-font decision is intentional and stands until Peter changes it.
+This pairing matches the original brief and the canonical homepage at [docs/reference/homepage.pdf](docs/reference/homepage.pdf). Two intermediate font experiments (Newsreader-as-body, then Playfair-everywhere) have been reverted by Peter's instruction "go back to the original look and feel".
 
 ### Wordmark and bowler hat
 
