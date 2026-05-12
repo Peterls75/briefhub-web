@@ -6,9 +6,9 @@ const sizes: Record<
   Size,
   { hatWidth: number; hatHeight: number; text: string }
 > = {
-  sm: { hatWidth: 22, hatHeight: 14, text: "text-xl" },
-  md: { hatWidth: 28, hatHeight: 18, text: "text-2xl md:text-3xl" },
-  lg: { hatWidth: 40, hatHeight: 26, text: "text-4xl md:text-5xl" },
+  sm: { hatWidth: 30, hatHeight: 20, text: "text-xl" },
+  md: { hatWidth: 42, hatHeight: 28, text: "text-2xl md:text-3xl" },
+  lg: { hatWidth: 60, hatHeight: 40, text: "text-4xl md:text-5xl" },
 };
 
 export function Wordmark({ size = "md" }: { size?: Size }) {
