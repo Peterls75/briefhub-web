@@ -14,10 +14,10 @@ export default function AboutPage() {
           eyebrowWords={["About BriefHub"]}
           title={
             <>
-              <span className="block font-medium">A curated panel.</span>
-              <span className="block font-medium">Defined scope.</span>
+              <span className="block font-medium">Post your brief.</span>
+              <span className="block font-medium">Review pitches.</span>
               <span className="block italic font-normal">
-                Comparable quotes.
+                Choose your lawyer.
               </span>
             </>
           }
