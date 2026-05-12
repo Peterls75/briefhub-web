@@ -33,12 +33,12 @@
   --color-focus: var(--color-icy-electric);
 
   /* === Typography ===
-   * Two serifs. Playfair Display is the display face (high contrast,
-   * for the wordmark and headlines). Newsreader is the reading face
-   * (gentler contrast, optimised for body text on screen).
+   * One serif: Playfair Display, used everywhere (wordmark, headlines,
+   * body, labels, buttons). This is the BriefHub logo font extended
+   * to the whole reading surface, by Peter's instruction.
    */
   --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
-  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
 }
 
 :root {

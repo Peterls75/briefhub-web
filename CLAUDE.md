@@ -45,13 +45,11 @@ Components use the semantic names (`bg-surface`, `text-ink`, `text-accent`, `bor
 
 ### Typography
 
-Two serifs. One editorial system, no sans-serif anywhere on the public site.
+One serif. Playfair Display everywhere: wordmark, headlines, body, labels, buttons, eyebrow labels, form controls. Self-hosted via `next/font/google`. Loaded weights: 400, 500, 600, 700, with italic across the same range.
 
-- **Playfair Display** is the display face: wordmark, h1, h2, pull quotes. High contrast, "Didone" style. Self-hosted via `next/font/google`. Loaded weights: 400, 500, 600, 700, with italic.
-- **Newsreader** is the reading face: body text, navigation, labels, buttons, form controls, eyebrow labels. Designed for screen reading at editorial scale, gentler contrast than Playfair. Self-hosted the same way. Loaded weights: 400, 500, 600, 700, with italic.
-- Small-caps eyebrow labels in Newsreader, blue-grey on cream, with a middle-dot (` · `) separator between phrases. Use at the top of every major section.
+Body text defaults to 400 weight. Headlines step up to 500 or 600 for upright lines and use italic 400 for the third line of three-line strapline headlines (the brand's resolution beat). The wordmark uses 400 for "Brief" and 700 for "Hub".
 
-Body text defaults to 400 weight Newsreader. The eyebrow labels and emphasised inline words use the bolder weights or italic. Italic is reserved for the third line of three-line strapline headlines (carrying the brand's resolution beat) and for emphasis within paragraphs.
+This is by Peter's instruction: "use the same fonts as the BriefHub logo font." Playfair Display is a "Didone" style serif (high contrast, thin/thick strokes) designed primarily for display use. At body size it can read heavier than a purpose-built reading serif. If long-form pages (privacy, terms) read uncomfortably the alternative is the newer "Playfair" family (with optical sizes for body), but the single-font decision is intentional and stands until Peter changes it.
 
 ### Wordmark and bowler hat
 
