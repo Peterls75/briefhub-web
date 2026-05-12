@@ -45,9 +45,13 @@ Components use the semantic names (`bg-surface`, `text-ink`, `text-accent`, `bor
 
 ### Typography
 
-- **Playfair Display** for the wordmark, h1, h2 and pull quotes. Self-hosted via `next/font/google`. Loaded weights: 400, 500, 600, 700, with italic.
-- **Inter Medium (500)** for body, navigation, labels, buttons and form controls. Self-hosted the same way.
-- Small-caps eyebrow labels in Inter, blue-grey on cream, with a middle-dot (` · `) separator between phrases. Use at the top of every major section.
+Two serifs. One editorial system, no sans-serif anywhere on the public site.
+
+- **Playfair Display** is the display face: wordmark, h1, h2, pull quotes. High contrast, "Didone" style. Self-hosted via `next/font/google`. Loaded weights: 400, 500, 600, 700, with italic.
+- **Newsreader** is the reading face: body text, navigation, labels, buttons, form controls, eyebrow labels. Designed for screen reading at editorial scale, gentler contrast than Playfair. Self-hosted the same way. Loaded weights: 400, 500, 600, 700, with italic.
+- Small-caps eyebrow labels in Newsreader, blue-grey on cream, with a middle-dot (` · `) separator between phrases. Use at the top of every major section.
+
+Body text defaults to 400 weight Newsreader. The eyebrow labels and emphasised inline words use the bolder weights or italic. Italic is reserved for the third line of three-line strapline headlines (carrying the brand's resolution beat) and for emphasis within paragraphs.
 
 ### Wordmark and bowler hat
 

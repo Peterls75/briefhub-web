@@ -32,10 +32,13 @@
   --color-muted: var(--color-warm-taupe);
   --color-focus: var(--color-icy-electric);
 
-  /* === Typography === */
+  /* === Typography ===
+   * Two serifs. Playfair Display is the display face (high contrast,
+   * for the wordmark and headlines). Newsreader is the reading face
+   * (gentler contrast, optimised for body text on screen).
+   */
   --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI",
-    sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
 }
 
 :root {
@@ -46,8 +49,8 @@ html,
 body {
   background: var(--color-surface);
   color: var(--color-ink);
-  font-family: var(--font-sans);
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -57,9 +60,4 @@ body {
   outline: 2px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: 2px;
-}
-
-/* Editorial measure for prose. Components opt in with `max-w-prose`. */
-.prose-measure {
-  max-width: 65ch;
 }

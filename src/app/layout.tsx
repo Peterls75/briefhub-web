@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Newsreader } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -10,17 +10,18 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "BriefHub",
   description:
-    "City-grade commercial solicitors pitching for your work. Three comparable quotes inside 48 hours. Free for clients.",
+    "The fastest, easiest and dare we say cheapest way to buy quality legal advice. A vetted network of senior commercial solicitors. Three comparable pitches at three fixed prices. Free for buyers.",
   metadataBase: new URL("https://briefhub.co"),
   openGraph: {
     title: "BriefHub",
@@ -39,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable} h-full antialiased`}
+      className={`${playfair.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface text-ink">
         {children}

@@ -4,21 +4,21 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Eyebrow } from "@/components/Eyebrow";
 import { PracticeBand } from "@/components/PracticeBand";
 
-const steps = [
+const spine = [
   {
-    step: "Step one",
-    title: "You post a brief",
-    body: "Fourteen plain English questions. Three steps. About five minutes.",
+    label: "Quicker",
+    headline: "Two or three working days.",
+    body: "Three to five city-grade senior solicitors quote on each brief inside an agreed window. From posted brief to comparable pitches in two or three working days.",
   },
   {
-    step: "Step two",
-    title: "We send it out",
-    body: "The right lawyers on the network pitch with fixed or capped fees.",
+    label: "Easier",
+    headline: "Three pitches, decision-ready.",
+    body: "We do the sourcing, the scoping and the comparison work. You see three side-by-side pitches, reviewed before they reach you.",
   },
   {
-    step: "Step three",
-    title: "You choose",
-    body: "Three comparable pitches. You pick. Engage direct. We step aside.",
+    label: "Dare we say, cheaper",
+    headline: "Three pitches keep the number honest.",
+    body: "Three competing fixed-price pitches keep the number honest in a way one phone call never will.",
   },
 ];
 
@@ -31,8 +31,8 @@ export default function HomePage() {
         <section className="px-6 md:px-10 pt-16 md:pt-24 pb-16 md:pb-20 text-center">
           <Eyebrow
             words={[
-              "A curated network",
-              "Senior commercial solicitors",
+              "For procurement teams",
+              "In-house lawyers",
               "UK",
             ]}
           />
@@ -45,21 +45,20 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="mt-8 md:mt-10 mx-auto max-w-xl text-base md:text-lg text-ink font-medium leading-snug">
-            City-grade commercial solicitors pitching for your work. Three
-            comparable quotes inside 48 hours. Free for clients.
+          <p className="mt-8 md:mt-10 mx-auto max-w-2xl text-base md:text-lg text-ink leading-snug">
+            The fastest, easiest and dare we say cheapest way to buy quality legal advice. A vetted network of senior commercial solicitors. A refined brief. Three comparable pitches at three fixed prices. Free for buyers.
           </p>
 
           <div className="mt-8 md:mt-10 flex items-center justify-center gap-6 md:gap-8 flex-wrap">
             <Link
               href="/start"
-              className="rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-cream hover:bg-accent/90 transition-colors"
+              className="rounded-full bg-accent px-7 py-3.5 text-sm text-cream hover:bg-accent/90 transition-colors"
             >
               Start your brief
             </Link>
             <Link
               href="/how-it-works"
-              className="text-sm font-medium text-accent underline underline-offset-4 hover:no-underline"
+              className="text-sm text-accent underline underline-offset-4 hover:no-underline"
             >
               See how it works
             </Link>
@@ -70,22 +69,46 @@ export default function HomePage() {
 
         <section className="px-6 md:px-10 py-16 md:py-24">
           <div className="mx-auto max-w-6xl grid gap-10 md:gap-0 md:grid-cols-3">
-            {steps.map((s, i) => (
+            {spine.map((s, i) => (
               <div
-                key={s.step}
+                key={s.label}
                 className={`px-2 md:px-8 ${
                   i > 0 ? "md:border-l border-rule/40" : ""
                 }`}
               >
-                <Eyebrow words={[s.step]} />
+                <Eyebrow words={[s.label]} />
                 <h2 className="mt-3 font-display text-2xl md:text-[1.65rem] text-ink leading-tight">
-                  {s.title}
+                  {s.headline}
                 </h2>
                 <p className="mt-3 text-base text-ink leading-relaxed">
                   {s.body}
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="px-6 md:px-10 py-16 md:py-24 bg-surface-raised border-y border-rule/30">
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow words={["How to use us"]} />
+            <h2 className="mt-6 font-display text-3xl md:text-4xl lg:text-5xl text-accent leading-tight tracking-tight">
+              A good panel takes years to build.
+              <br />
+              <span className="italic font-normal">
+                Borrow ours for the matter on the desk.
+              </span>
+            </h2>
+            <p className="mt-8 mx-auto max-w-2xl text-base md:text-lg text-ink leading-relaxed">
+              Plug BriefHub in for the matter that is outside your existing panel. Or alongside the panel, for the pricing pressure that comes from three quotes instead of one. Or as an overflow lane when capacity is short and the deadline is not.
+            </p>
+            <div className="mt-10">
+              <Link
+                href="/start"
+                className="rounded-full bg-accent px-7 py-3.5 text-sm text-cream hover:bg-accent/90 transition-colors"
+              >
+                Start your brief
+              </Link>
+            </div>
           </div>
         </section>
       </main>
