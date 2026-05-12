@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BriefHub
 
-## Getting Started
+The website for BriefHub: a curated panel where UK businesses post a commercial legal brief and receive three comparable fixed-fee quotes from senior solicitors within roughly 48 hours.
 
-First, run the development server:
+This repository contains the public marketing site, the client portal, the lawyer portal and the admin area as different routes inside one Next.js application.
 
-```bash
+## Stack
+
+- Next.js 16 (App Router) with TypeScript in strict mode
+- Tailwind v4 for styling (CSS-first config in `src/app/globals.css`)
+- Self-hosted Playfair Display and Inter via `next/font/google`
+- Cloudflare Workers via OpenNext for hosting
+- Supabase for database, authentication and file storage (phase 5 onwards)
+- Anthropic API for the scope refinement step (phase 4)
+- Stripe for the introduction fee invoice on award (phase 8)
+
+## Getting started
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000> to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and fill in the values. Each variable has a one-line comment explaining what it is for. Never commit `.env.local`.
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/` — App Router routes. Public marketing pages, the brief intake form, and (later phases) the client, lawyer and admin portals.
+- `src/components/` — reusable components. The brand primitives `Wordmark`, `Eyebrow`, `SiteNav`, `SiteFooter` and `PracticeBand` live here.
+- `public/brand/` — the bowler hat SVG and any other brand assets. The bowler hat is the single source of truth for the logomark; never redraw.
+- `docs/` — design references, intake questions, the refinement criteria, the BriefHub Scope Document template, email templates. Versioned with the codebase.
+- `CLAUDE.md` — institutional memory for working on this project. The rules that have been corrected into existence as the brief has been refined.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploying
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The site deploys to Cloudflare Workers via OpenNext. Build and runtime configuration lives in `wrangler.jsonc` and `open-next.config.ts` (added at the start of phase 1).
 
-## Deploy on Vercel
+Preview deployments run for every branch and pull request. Production is `main`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Brand
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cream and burgundy. Playfair Display for the wordmark and display headings. Inter Medium for everything else. Editorial layout, generous whitespace, no SaaS reflexes.
+
+The canonical look and feel lives at [docs/reference/homepage.pdf](docs/reference/homepage.pdf). The full brand foundation, code standards and house rules are in [CLAUDE.md](CLAUDE.md).

@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
+@theme {
+  /* === Brand palette ===
+   * Two tiers. Core (burgundy, cream, blue-grey) is the brand identity.
+   * Supporting is utility. Never combine more than four on one surface.
+   * Spelling note: variable names use "color" not "colour" because
+   * Tailwind v4 requires the --color- prefix to generate utility classes.
+   * Documentation in CLAUDE.md uses British spelling.
+   */
+
+  /* Core */
+  --color-burgundy: #6b1d2c;
+  --color-cream: #ede5d8;
+  --color-blue-grey: #b8c5d6;
+
+  /* Supporting */
+  --color-deep-ink: #161f2e;
+  --color-pale-cream: #f4ecdf;
+  --color-warm-taupe: #b8a890;
+  --color-icy-electric: #c4e0ee;
+
+  /* Semantic aliases — components should reach for these.
+   * Changing one of these in this file is the only thing required
+   * to recolour the whole site for the role in question.
+   */
+  --color-surface: var(--color-cream);
+  --color-surface-raised: var(--color-pale-cream);
+  --color-ink: var(--color-deep-ink);
+  --color-accent: var(--color-burgundy);
+  --color-rule: var(--color-blue-grey);
+  --color-muted: var(--color-warm-taupe);
+  --color-focus: var(--color-icy-electric);
+
+  /* === Typography === */
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Editorial measure for prose. Components opt in with `max-w-prose`. */
+.prose-measure {
+  max-width: 65ch;
 }

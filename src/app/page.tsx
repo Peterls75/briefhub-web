@@ -1,65 +1,96 @@
-import Image from "next/image";
+import Link from "next/link";
+import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
+import { Eyebrow } from "@/components/Eyebrow";
+import { PracticeBand } from "@/components/PracticeBand";
 
-export default function Home() {
+const steps = [
+  {
+    step: "Step one",
+    title: "You post a brief",
+    body: "Fourteen plain English questions. Three steps. About five minutes.",
+  },
+  {
+    step: "Step two",
+    title: "We send it out",
+    body: "The right lawyers on the network pitch with fixed or capped fees.",
+  },
+  {
+    step: "Step three",
+    title: "You choose",
+    body: "Three comparable pitches. You pick. Engage direct. We step aside.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      <SiteNav />
+
+      <main className="flex-1">
+        <section className="px-6 md:px-10 pt-16 md:pt-24 pb-16 md:pb-20 text-center">
+          <Eyebrow
+            words={[
+              "A curated network",
+              "Senior commercial solicitors",
+              "UK",
+            ]}
+          />
+
+          <h1 className="mt-8 md:mt-10 font-display text-accent text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] leading-[1.02] tracking-tight">
+            <span className="block font-medium">Post your brief.</span>
+            <span className="block font-medium">Review pitches.</span>
+            <span className="block italic font-normal">
+              Choose your lawyer.
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-8 md:mt-10 mx-auto max-w-xl text-base md:text-lg text-ink font-medium leading-snug">
+            City-grade commercial solicitors pitching for your work. Three
+            comparable quotes inside 48 hours. Free for clients.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+          <div className="mt-8 md:mt-10 flex items-center justify-center gap-6 md:gap-8 flex-wrap">
+            <Link
+              href="/start"
+              className="rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-cream hover:bg-accent/90 transition-colors"
+            >
+              Start your brief
+            </Link>
+            <Link
+              href="/how-it-works"
+              className="text-sm font-medium text-accent underline underline-offset-4 hover:no-underline"
+            >
+              See how it works
+            </Link>
+          </div>
+        </section>
+
+        <PracticeBand />
+
+        <section className="px-6 md:px-10 py-16 md:py-24">
+          <div className="mx-auto max-w-6xl grid gap-10 md:gap-0 md:grid-cols-3">
+            {steps.map((s, i) => (
+              <div
+                key={s.step}
+                className={`px-2 md:px-8 ${
+                  i > 0 ? "md:border-l border-rule/40" : ""
+                }`}
+              >
+                <Eyebrow words={[s.step]} />
+                <h2 className="mt-3 font-display text-2xl md:text-[1.65rem] text-ink leading-tight">
+                  {s.title}
+                </h2>
+                <p className="mt-3 text-base text-ink leading-relaxed">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
-    </div>
+
+      <SiteFooter />
+    </>
   );
 }
