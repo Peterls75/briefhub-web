@@ -50,19 +50,27 @@ export default function AboutPage() {
                 Some matters belong with a full-service firm
               </h2>
               <p className="mt-5 text-base md:text-lg text-ink leading-relaxed max-w-2xl">
-                We are not a marketplace. We are not a directory. We do not sell leads or run an open auction where the cheapest wins. We do not lock lawyers into exclusivity. Some matters belong with a full-service firm or counsel you already trust. We say so when they do.
+                We are not a marketplace. We are not a directory. We do not sell leads or run an open auction where the cheapest wins. We do not lock lawyers into exclusivity. Some matters belong with a full-service firm, or counsel you already trust. We say so when they do.
               </p>
             </div>
 
             <div>
-              {/* TODO: real bio paragraph from PLS */}
+              {/* Bio is placeholder copy. Replace with PLS's preferred phrasing. */}
               <Eyebrow words={["Who runs it"]} />
               <h2 className="mt-3 font-display text-2xl md:text-3xl text-ink leading-tight">
                 Peter Lumley-Savile
               </h2>
-              <p className="mt-5 text-base md:text-lg text-ink leading-relaxed max-w-2xl">
-                BriefHub is run by Peter Lumley-Savile, a UK commercial lawyer.
-              </p>
+              <div className="mt-5 space-y-4 text-base md:text-lg text-ink leading-relaxed max-w-2xl">
+                <p>
+                  BriefHub is run by Peter Lumley-Savile, a UK commercial lawyer.
+                </p>
+                <p>
+                  The platform began with a particular frustration. Commercial legal work, for the matters where there should be a competitive process, almost never gets one. The buyer either calls the firm they know or spends a week chasing introductions and ends up with quotes they cannot read against each other. BriefHub is the attempt to fix that by treating scope refinement as the deliverable it deserves to be and by sending the refined question to people who actually do the work.
+                </p>
+                <p>
+                  Peter writes about the business of legal procurement, the economics of the commercial bar, and the difference between buying a lawyer and buying an outcome. Most of that thinking finds its way into the choices BriefHub makes on the platform itself.
+                </p>
+              </div>
             </div>
 
             <div className="pt-4">
