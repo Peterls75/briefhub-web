@@ -4,21 +4,21 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Eyebrow } from "@/components/Eyebrow";
 import { PracticeBand } from "@/components/PracticeBand";
 
-const spine = [
+const steps = [
   {
-    label: "Quicker",
-    headline: "Two or three working days.",
-    body: "Three to five city-grade senior solicitors quote on each brief inside an agreed window. From posted brief to comparable pitches in two or three working days.",
+    step: "Step one",
+    title: "You post a brief",
+    body: "Fourteen plain English questions. Three steps. About five minutes.",
   },
   {
-    label: "Easier",
-    headline: "Three pitches, decision-ready.",
-    body: "We do the sourcing, the scoping and the comparison work. You see three side-by-side pitches, reviewed before they reach you.",
+    step: "Step two",
+    title: "We send it out",
+    body: "The right lawyers on the network pitch with fixed or capped fees.",
   },
   {
-    label: "Dare we say, cheaper",
-    headline: "Three pitches keep the number honest.",
-    body: "Three competing fixed-price pitches keep the number honest in a way one phone call never will.",
+    step: "Step three",
+    title: "You choose",
+    body: "Three comparable pitches. You pick. Engage direct. We step aside.",
   },
 ];
 
@@ -69,16 +69,16 @@ export default function HomePage() {
 
         <section className="px-6 md:px-10 py-16 md:py-24">
           <div className="mx-auto max-w-6xl grid gap-10 md:gap-0 md:grid-cols-3">
-            {spine.map((s, i) => (
+            {steps.map((s, i) => (
               <div
-                key={s.label}
+                key={s.step}
                 className={`px-2 md:px-8 ${
                   i > 0 ? "md:border-l border-rule/40" : ""
                 }`}
               >
-                <Eyebrow words={[s.label]} />
+                <Eyebrow words={[s.step]} />
                 <h2 className="mt-3 font-display text-2xl md:text-[1.65rem] text-ink leading-tight">
-                  {s.headline}
+                  {s.title}
                 </h2>
                 <p className="mt-3 text-base text-ink leading-relaxed">
                   {s.body}
