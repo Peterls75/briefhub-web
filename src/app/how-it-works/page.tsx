@@ -119,10 +119,10 @@ export default function HowItWorksPage() {
                 Start your brief
               </Link>
               <Link
-                href="/for-lawyers"
+                href="/about"
                 className="text-sm font-medium text-accent underline underline-offset-4 hover:no-underline"
               >
-                For lawyers
+                About BriefHub
               </Link>
             </div>
           </div>

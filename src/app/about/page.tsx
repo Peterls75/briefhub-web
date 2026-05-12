@@ -82,10 +82,10 @@ export default function AboutPage() {
                   Start your brief
                 </Link>
                 <Link
-                  href="/for-lawyers"
+                  href="/how-it-works"
                   className="text-sm font-medium text-accent underline underline-offset-4 hover:no-underline"
                 >
-                  For lawyers
+                  See how it works
                 </Link>
               </div>
             </div>

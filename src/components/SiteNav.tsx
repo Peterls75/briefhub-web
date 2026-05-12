@@ -3,7 +3,6 @@ import { Wordmark } from "./Wordmark";
 
 const navLinks = [
   { href: "/how-it-works", label: "How it works" },
-  { href: "/for-lawyers", label: "For lawyers" },
   { href: "/about", label: "About" },
 ];
 

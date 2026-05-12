@@ -1,8 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PageHeader } from "@/components/PageHeader";
 import { Eyebrow } from "@/components/Eyebrow";
+
+/**
+ * Unlisted page: reachable by direct URL only, not linked from the
+ * client-facing nav and not indexed by search engines. Used by direct
+ * outreach to prospective panel lawyers.
+ */
+
+export const metadata: Metadata = {
+  title: "BriefHub for lawyers",
+  robots: { index: false, follow: false },
+};
 
 export default function ForLawyersPage() {
   return (
