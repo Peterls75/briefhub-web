@@ -70,9 +70,11 @@ export default function HowItWorksPage() {
           ]}
           title={
             <>
-              <span className="block font-medium">Brief in.</span>
-              <span className="block font-medium">Scope out.</span>
-              <span className="block italic font-normal">Quotes back.</span>
+              <span className="block font-medium">Post your brief.</span>
+              <span className="block font-medium">Review pitches.</span>
+              <span className="block italic font-normal">
+                Choose your lawyer.
+              </span>
             </>
           }
           lede="Legal procurement is usually a phone call, two or three introductions and a fee structure you cannot read across firms. BriefHub runs the same matter through a defined process so what you get back is three quotes you can read side by side, from lawyers who actually do the work."
